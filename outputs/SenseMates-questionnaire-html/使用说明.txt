@@ -1,0 +1,20 @@
+SenseMates HTML 问卷（Supabase 云数据库版）
+
+当前状态：
+1. Supabase 云数据库已经连接成功。
+2. 已验证参与者可以提交回答，但不能读取其他参与者的数据。
+3. 双击 index.html 可以在本地测试；发布时请上传文件夹中的全部内容。
+4. 请保持 index.html、app.js、styles.css、supabase-config.js、assets 和 supabase 文件夹的相对位置不变。
+
+查看数据：
+Supabase 后台 → Table Editor → sensemates_responses。
+每位参与者是一行，answers 列保存十道题的完整回答。
+
+安全提示：
+网页中只能填写 Publishable key。不要把 service_role key、secret key 或数据库密码放进任何网页文件或 GitHub 仓库。
+
+GitHub Pages：
+把这个文件夹中的全部文件上传到 GitHub 仓库并启用 Pages。请勿只上传 index.html。
+
+连接测试记录：
+数据库中有一条昵称为“连接测试”的无个人信息记录，用于确认提交功能正常。确认看到后可以在 Table Editor 中删除这一行。

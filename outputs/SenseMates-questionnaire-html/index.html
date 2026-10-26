@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5f2df" />
+  <meta name="description" content="SenseMates 活动倾向调查问卷 / Attendee Preference Questionnaire" />
+  <title>SenseMates｜活动倾向调查</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="stage">
+    <section class="phone" aria-live="polite">
+      <section class="view poster-screen" data-screen="poster">
+        <div class="doodle doodle-one">✦</div><div class="doodle doodle-two">●</div>
+        <p class="eyebrow">SENSEMATES · NOT JUST A VEGGIE!</p>
+        <div class="logo-plate"><img src="assets/main-logo.webp" alt="SenseMates：包包、番番和椒椒" /></div>
+        <div class="poster-copy">
+          <p class="mini-en">MORE THAN MEETS THE EYE</p>
+          <h1>不止眼前<br />这一面</h1>
+          <p>别急着贴标签，先试着了解。<br /><span>Look beyond the first impression.</span></p>
+        </div>
+        <button class="primary lime" data-go="profile">开始探索 · Let’s go <span>→</span></button>
+        <button class="text-button" data-go="home">先看看活动 / About the event</button>
+      </section>
+
+      <section class="view home-screen paper-screen" data-screen="home" hidden>
+        <header class="topbar"><img src="assets/secondary-logo.jpg" alt="SenseMates" /><button class="round-button" data-go="poster" aria-label="返回海报页">×</button></header>
+        <section class="home-hero">
+          <span class="campaign-tag">NATURAL CURIOSITY</span>
+          <p class="eyebrow">SENSEMATES CAMPUS EVENT</p>
+          <h2>你真的<br />了解我吗？</h2>
+          <p>用美食、游戏和创意体验，一起看看第一印象之外还有什么。<br /><span>Explore what lies beyond first impressions through food, games and creative activities.</span></p>
+          <button class="primary dark" data-go="profile">填写活动倾向 / Take the survey <span>→</span></button>
+        </section>
+        <section class="section-block">
+          <div class="section-heading"><h3>农场新鲜事</h3><span>FRESH UPDATES</span></div>
+          <div class="news-grid">
+            <article class="news-card yellow"><span>01</span><h4>活动动态<br />Event Updates</h4><p>时间、地点和活动详情会在这里同步。</p></article>
+            <article class="news-card coral"><span>02</span><h4>认识伙伴<br />Meet the Mates</h4><p>认识三位蔬菜伙伴不为人知的另一面。</p></article>
+          </div>
+        </section>
+        <nav class="bottom-nav" aria-label="主导航"><button class="active">⌂<span>首页 Home</span></button><button data-go="profile">✎<span>问卷 Survey</span></button><button>♡<span>关于 About</span></button></nav>
+      </section>
+
+      <section class="view paper-screen form-screen" data-screen="profile" hidden>
+        <header class="flow-header"><button class="round-button" data-go="poster" aria-label="返回">←</button><div class="step"><strong>01</strong><span>/ 02</span></div></header>
+        <div class="progress"><i style="width:50%"></i></div>
+        <div class="title-block"><span class="visual-tag">PROFILE CARD</span><p class="eyebrow">HELLO, NEW FRIEND!</p><h2>先认识一下你</h2><p>Tell us a little about yourself. 信息仅用于活动策划与匿名统计。</p></div>
+        <form id="profile-form" novalidate>
+          <label class="field"><span>昵称 / Nickname</span><input name="nickname" placeholder="想让我们怎么称呼你？ / What should we call you?" maxlength="24" autocomplete="nickname" /></label>
+          <div class="field"><span>身份 / Role</span><div class="segmented"><button type="button" class="selected" data-choice="role" data-value="学生 / Student">学生 Student</button><button type="button" data-choice="role" data-value="老师 / Teacher">老师 Teacher</button></div></div>
+          <div class="field"><span>性别 / Gender</span><div class="chip-list"><button type="button" data-choice="gender" data-value="女生 / Female">女生 Female</button><button type="button" data-choice="gender" data-value="男生 / Male">男生 Male</button><button type="button" data-choice="gender" data-value="其他 / Other">其他 Other</button><button type="button" data-choice="gender" data-value="不便透露 / Prefer not to say">不便透露<br />Prefer not to say</button></div></div>
+          <label class="field"><span>年级 / Year</span><select name="grade"><option value="">请选择 / Select</option><option>大一 / Year 1</option><option>大二 / Year 2</option><option>大三 / Year 3</option><option>大四 / Year 4</option><option>研究生 / Postgraduate</option><option>教师 / Faculty</option><option>其他 / Other</option></select></label>
+          <label class="field"><span>专业 / Major</span><input name="major" placeholder="例如：视觉传达设计 / e.g. Visual Communication" maxlength="50" /></label>
+          <label class="consent"><input type="checkbox" name="consent" /><span>我已了解：这些信息仅用于 SenseMates 活动策划与匿名统计。<br />I understand that this information will only be used for event planning and anonymous analysis.</span></label>
+          <p class="notice" id="profile-notice" role="alert" hidden></p>
+          <button class="primary dark" type="submit">下一步，选伙伴 / Choose a mate <span>→</span></button>
+        </form>
+      </section>
+
+      <section class="view paper-screen buddy-screen" data-screen="buddy" hidden>
+        <header class="flow-header"><button class="round-button" data-go="profile" aria-label="返回个人信息">←</button><div class="step"><strong>02</strong><span>/ 02</span></div></header>
+        <div class="progress"><i style="width:100%"></i></div>
+        <div class="title-block"><span class="visual-tag">MATE SELECT</span><p class="eyebrow">CHOOSE YOUR MATE</p><h2>谁来陪你出发？</h2><p>凭第一感觉选一位伙伴，没有标准答案。<br />Pick the mate you feel drawn to—there’s no wrong answer.</p></div>
+        <p class="preview-hint">轻点头像可以放大查看 / Tap a portrait to take a closer look.</p>
+        <div class="buddy-list">
+          <article class="buddy-card"><span class="card-index">01</span><button class="buddy-image" data-preview="bokie" aria-label="放大查看包包"><img src="assets/bokie-avatar.webp" alt="包包 Bokie" /><span>⌕</span></button><div class="buddy-copy"><h3>包包 Bokie</h3><span class="buddy-trait">温柔慢热 · Gentle</span><p>慢一点也没关系。<br />It’s okay to take it slow.</p></div><button class="select-buddy" data-buddy="bokie">选择 Choose</button></article>
+          <article class="buddy-card"><span class="card-index">02</span><button class="buddy-image" data-preview="toma" aria-label="放大查看番番"><img src="assets/toma-avatar.webp" alt="番番 Toma" /><span>⌕</span></button><div class="buddy-copy"><h3>番番 Toma</h3><span class="buddy-trait">热情开朗 · Lively</span><p>开心要分享，难过也能说。<br />Share your joy—and your sadness.</p></div><button class="select-buddy" data-buddy="toma">选择 Choose</button></article>
+          <article class="buddy-card"><span class="card-index">03</span><button class="buddy-image" data-preview="pippi" aria-label="放大查看椒椒"><img src="assets/pippi-avatar.webp" alt="椒椒 Pippi" /><span>⌕</span></button><div class="buddy-copy"><h3>椒椒 Pippi</h3><span class="buddy-trait">好奇聪明 · Curious</span><p>原来还可以这样！<br />Wow, it can work like this!</p></div><button class="select-buddy" data-buddy="pippi">选择 Choose</button></article>
+        </div>
+        <p class="notice" id="buddy-notice" role="alert" hidden></p>
+        <button class="primary dark sticky-action" id="finish-button">和伙伴一起开始 / Start together <span>→</span></button>
+      </section>
+
+      <section class="view ready-screen" data-screen="ready" hidden>
+        <p class="eyebrow">SENSEMATES ATTENDEE PREFERENCE QUESTIONNAIRE</p>
+        <div class="ready-character"><img id="ready-image" src="assets/bokie-avatar.webp" alt="你的蔬菜伙伴" /></div>
+        <div class="speech" id="ready-line">“慢一点也没关系。”</div>
+        <h2><span id="ready-name">新朋友</span>，<br />准备好了吗？</h2>
+        <p>一共 10 题，每题单独一页，约 3 分钟完成。除标注“可多选”外，每题请选择一个答案。<br /><span>10 questions, one per screen, about 3 minutes. Choose one answer unless the question says “Select all that apply.”</span></p>
+        <button class="primary lime" id="start-questionnaire">开始问卷 / Start the survey <span>→</span></button>
+        <button class="text-button" data-go="buddy">重新选择伙伴 / Choose again</button>
+      </section>
+
+      <section class="view paper-screen question-screen" data-screen="question" hidden>
+        <header class="flow-header"><button class="round-button" id="question-back" aria-label="上一页">←</button><div class="step question-count"><strong id="question-current">01</strong><span id="question-total">/ 10</span></div></header>
+        <div class="progress question-progress"><i id="question-progress-bar"></i></div>
+        <article id="question-card"></article>
+        <p class="notice" id="question-notice" role="alert" hidden></p>
+        <div class="question-actions"><button class="primary dark" id="question-next">下一题 / Next <span>→</span></button></div>
+      </section>
+
+      <section class="view complete-screen" data-screen="complete" hidden>
+        <div class="complete-burst">THANK<br />YOU!</div>
+        <img class="complete-logo" src="assets/main-logo.webp" alt="SenseMates" />
+        <p class="eyebrow">YOU’VE HELPED SHAPE SENSEMATES</p>
+        <h2>收到啦！<br />All done!</h2>
+        <p>谢谢你分享自己的偏好。你的回答会帮助我们决定 SenseMates 最终怎么玩。<br /><span>Thanks for sharing your preferences. Your answers will help us shape the final SenseMates event.</span></p>
+        <p class="cloud-status" id="cloud-status">回答已安全提交到云端。 / Your response has been submitted securely.</p>
+        <button class="primary lime" id="download-answers">保存本次回答 / Save my answers <span>↓</span></button>
+        <button class="text-button" id="restart-survey">重新填写 / Start over</button>
+      </section>
+
+      <div class="image-preview" id="image-preview" role="dialog" aria-modal="true" aria-label="角色头像预览" hidden>
+        <div class="preview-panel">
+          <button class="preview-close" id="preview-close" aria-label="关闭预览">×</button>
+          <img id="preview-image" src="assets/bokie-avatar.webp" alt="角色头像" />
+          <h3 id="preview-name">包包 Bokie</h3>
+          <p id="preview-line">慢一点也没关系。 / It’s okay to take it slow.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="supabase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
